@@ -1,5 +1,6 @@
 .DS_*
-node_modules
+node_modules/*
+package-lock.json
 *.sublime*
 psd
 thumb

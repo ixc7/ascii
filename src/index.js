@@ -9,7 +9,7 @@
 
 import fs from 'fs'
 import Canvas from 'canvas'
-import asciiFromCanvas from './ascii'
+import asciiFromCanvas from './ascii.js'
 
 export default class Ascii {
   constructor(src, params) {
@@ -34,7 +34,7 @@ export default class Ascii {
       var pic = new Canvas.Image
       pic.src = img
 
-      var cv = new Canvas(pic.width, pic.height)
+      var cv = new Canvas.Canvas(pic.width, pic.height)
       var ctx = cv.getContext('2d')
       var ascii = new asciiFromCanvas
 

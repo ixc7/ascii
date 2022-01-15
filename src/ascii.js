@@ -44,17 +44,17 @@ export default class asciiFromCanvas {
 
   // 初始化
   init(type, ctx, pic) {
-    var data = ctx.getImageData(0, 0, pic.width, pic.height)
-    var text = ''
+    const data = ctx.getImageData(0, 0, pic.width, pic.height)
+    let text = ''
 
-    for (h = 0; h < data.height; h += 12) {
-      var p = '';
-      for (w = 0; w < data.width; w += 6) {
-        var index = (w + data.width * h) * 4;
-        var r = data.data[index + 0];
-        var g = data.data[index + 1];
-        var b = data.data[index + 2];
-        var gray = this.getGray(r, g, b);
+    for (let h = 0; h < data.height; h += 12) {
+      let p = '';
+      for (let w = 0; w < data.width; w += 6) {
+        const index = (w + data.width * h) * 4;
+        const r = data.data[index + 0];
+        const g = data.data[index + 1];
+        const b = data.data[index + 2];
+        const gray = this.getGray(r, g, b);
         p += this.toText(type, gray);
       }
       p += this.types[type].br;
